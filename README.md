@@ -1,28 +1,34 @@
 # Digital Marketing Course Platform
 
-A Django-based learning platform for beginners exploring digital marketing and SEO. This project helps learners browse courses, watch lesson videos, track progress, and build practical knowledge through a simple, structured learning experience.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Django-6.1-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
+  <img src="https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+</p>
+
+A modern Django-based learning platform designed to help beginners explore digital marketing and SEO through structured courses, guided lessons, and progress tracking.
 
 ## Overview
 
-This repository is designed as a compact educational app where users can:
+This repository contains a lightweight course portal where users can:
 
-- Browse digital marketing and SEO courses
-- Open detailed lesson pages with embedded video content
-- Track lesson completion progress
-- View a personal dashboard of completed learning milestones
-- Register and log in to manage their progress
+- browse digital marketing and SEO learning paths
+- view lesson details with embedded video content
+- track progress as lessons are completed
+- access a user dashboard tailored to their learning journey
+- register and log in to maintain personal progress
 
-The project blends a lightweight Django backend with template-driven HTML pages to create a beginner-friendly course portal.
+The project is intentionally simple and beginner-friendly, making it a strong starting point for educational web applications built with Django.
 
-## Features
+## Key Features
 
-- Course catalog with SEO and digital marketing learning tracks
-- Lesson-by-lesson content structure
+- Course catalog for digital marketing and SEO topics
+- Lesson-based learning flow with structured content
 - Embedded YouTube video support
-- Progress tracking with user completion records
-- Dashboard for learners to review progress
-- Clean, responsive template-based front end
-- SQLite database for quick local setup
+- User progress tracking for completed lessons
+- Personalized dashboard experience
+- SQLite-backed setup for local development
+- Clean, template-driven frontend
 
 ## Tech Stack
 
@@ -30,7 +36,7 @@ The project blends a lightweight Django backend with template-driven HTML pages 
 - Django
 - SQLite
 - HTML / XHTML templates
-- Bootstrap-inspired UI styling
+- GitHub-ready project structure
 
 ## Project Structure
 
@@ -38,9 +44,9 @@ The project blends a lightweight Django backend with template-driven HTML pages 
 digital_marketing/
 ├── config/
 │   ├── __init__.py
+│   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
-│   ├── asgi.py
 │   └── wsgi.py
 ├── courses/
 │   ├── management/
@@ -56,14 +62,21 @@ digital_marketing/
 │   ├── base.xhtml
 │   ├── courses/
 │   └── registration/
+├── .gitignore
 ├── db.sqlite3
 ├── manage.py
+├── README.md
 ├── requirements.txt
-├── .gitignore
-└── README.md
+└── static/
 ```
 
 ## Getting Started
+
+### Prerequisites
+
+- Python 3.11+
+- pip
+- virtual environment tool (optional but recommended)
 
 ### 1. Clone the repository
 
@@ -72,12 +85,17 @@ git clone https://github.com/Phurba2/digital_marketing.git
 cd digital_marketing
 ```
 
-### 2. Create a virtual environment
+### 2. Create and activate a virtual environment
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate   # On Linux/macOS
-# .venv\Scripts\activate   # On Windows
+source .venv/bin/activate
+```
+
+On Windows:
+
+```bash
+.venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
@@ -86,7 +104,7 @@ source .venv/bin/activate   # On Linux/macOS
 pip install -r requirements.txt
 ```
 
-### 4. Apply migrations
+### 4. Apply database migrations
 
 ```bash
 python manage.py migrate
@@ -98,53 +116,69 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Then open your browser at:
+Then open the app in your browser:
 
 ```text
 http://127.0.0.1:8000/
 ```
 
-## App Workflow
+## Application Behavior
 
-The platform includes:
+The app includes the following flows:
 
-- A landing page for introducing the learning experience
-- A dashboard for signed-in users
-- Detailed course pages
-- Lesson detail pages with video playback
-- A progress toggle mechanism to mark lessons as completed
+- landing page for introducing the learning platform
+- authenticated dashboard for user activity
+- course detail pages
+- lesson-specific video pages
+- progress toggling for completed learning modules
+- registration endpoint for new users
 
-## Default Django Setup
+## Admin Access
 
-This project is built using Django's default project structure with a custom `courses` app. The application is configured in `config/settings.py` and route handling is defined in `courses/urls.py`.
+To create an admin user:
 
-## Future Enhancements
+```bash
+python manage.py createsuperuser
+```
 
-Potential ideas for growing this project include:
+Then sign in at:
 
-- Admin-created course management via a richer CMS experience
-- User profiles and achievements
-- Quizzes and certifications
-- Search and filtering by topic
-- Payment or premium content access
+```text
+http://127.0.0.1:8000/admin/
+```
 
-## License
+## Configuration Notes
 
-This project does not currently include a license file. If you plan to distribute it publicly, consider adding an open-source license such as MIT.
+The project uses Django's default configuration with a custom `courses` app. Core configuration such as installed apps, URL routing, templates, static files, and login redirects are handled in `config/settings.py`.
+
+## Roadmap
+
+Potential future improvements include:
+
+- richer course management through the admin panel
+- quizzes and assessments
+- different user roles and permissions
+- search and filtering for courses
+- progress analytics and completion reports
+- authentication UX improvements
 
 ## Contributing
 
-Contributions are welcome. If you'd like to improve the platform, feel free to:
+Contributions are welcome. If you'd like to improve this project:
 
 1. Fork the repository
 2. Create a feature branch
 3. Commit your changes
 4. Open a pull request
 
+## License
+
+This project currently does not include a license file. If you plan to distribute or share it publicly, consider adding an appropriate open-source license such as MIT.
+
 ## Contact
 
-For questions or collaboration inquiries, please reach out through the repository owner profile on GitHub.
+For questions, feedback, or collaboration opportunities, please reach out via the GitHub repository owner profile.
 
 ---
 
-Built for learners starting their journey in digital marketing and SEO.
+Built for learners beginning their journey in digital marketing and SEO.
