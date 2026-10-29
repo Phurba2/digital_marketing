@@ -1,0 +1,42 @@
+{% extends "base.xhtml" %}
+
+{% block title %}Learn Digital Marketing & SEO | Digital Learning{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Master Digital Marketing and SEO with curated video lessons, expert resources, and progress tracking. Free to start learning today.">
+<meta name="keywords" content="digital marketing course, SEO training, learn SEO, digital marketing tutorial">
+<meta property="og:title" content="Learn Digital Marketing & SEO">
+<meta property="og:description" content="Curated video lessons on Digital Marketing and SEO. Track your progress for free.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white border rounded-3 text-center">
+  <h1 class="display-4">Master Digital Marketing & SEO</h1>
+  <p class="lead">
+    Curated video lessons and resources. Track your progress. Start today — it's free.
+  </p>
+  <a href="{% url 'courses:register' %}" class="btn btn-primary btn-lg mt-2">Get Started &raquo;</a>
+  <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg mt-2">Log in</a>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h4"><i class="bi bi-megaphone"></i> Digital Marketing</h2>
+        <p>Strategy, social media, content, and analytics fundamentals.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h4"><i class="bi bi-search"></i> SEO</h2>
+        <p>On-page, off-page, technical SEO, and keyword research.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
